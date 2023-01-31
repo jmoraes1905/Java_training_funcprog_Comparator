@@ -20,12 +20,13 @@ public class Program {
 		
 		//Comparator implemented through lambda expression -- much less verbose
 		//This is an anonymous function (or arrow function)
-		Comparator<Product> comp = (p1,p2)-> { //syntax: (parameters) ->(arrow) { implementation};
+	/*	Comparator<Product> comp = (p1,p2)-> { //syntax: (parameters) ->(arrow) { implementation};
 			return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());	
 			
 		};
-		
-		list.sort(comp);
+		*/
+		// Since it's just one line we could also make: Comparator<Product> comp = (p1,p2)-> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
+		list.sort((p1,p2)->p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 
 		//Print products ordered by name
 		for(Product p:list) {
